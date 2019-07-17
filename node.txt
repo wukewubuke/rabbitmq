@@ -1,0 +1,60 @@
+慕课网golang高并发实战秒杀课程
+
+安装rabbitmq
+1、下载erlang
+wget http://www.rabbitmq.com/releases/erlang/erlang-19.0.4-1.el7.centos.x86_64.rpm
+
+
+
+2、下载rabbitmq
+wget http://www.rabbitmq.com/releases/rabbitmq-server/v3.6.10/rabbitmq-server-3.6.10-1.el7.noarch.rpm
+
+
+3、安装rabbitmq
+rpm -ivh erlang-19.0.4-1.el7.centos.x86_64.rpm
+rpm -ivh rabbitmq-server-3.6.10-1.el7.noarch.rpm
+
+
+4、启动rabbitmq
+systemctl start rabbitmq-server
+
+
+
+rabbitmq管理命令
+启动 ：systemctl start rabbitmq-server
+停止 ：systemctl stop rabbitmq-server
+      rabbitmqctl stop  (2个命令)
+
+rabbitmq 插件管理命令
+列出插件列表 : rabbitmq-plugins list
+安装web管理插件：  rabbitmq-plugins enable rabbitmq_management
+卸载插件 :        rabbitmq-plugins disable rabbitmq_management
+
+--------------
+rabbitmq工作模式
+
+1、Simple模式
+
+
+
+2、work工作模式
+一个消息只能被一个消费者获取
+
+
+3、publish模式  订阅模式
+一个消息被多个消费者消费
+
+
+4、Routing路由模式
+一个消费者被多个消费者获取，并且消息的目标队列可被生产者指定
+
+
+
+5、话题模式 Topic
+一个消息可以被多个消费者获取，消息的目标queue可用bindingKey以通配符
+(# 一个或多个词, * 一个词)的方式指定
+
+
+
+
+
